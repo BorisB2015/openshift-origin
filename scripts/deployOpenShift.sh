@@ -485,6 +485,10 @@ $MASTER-0
 [master0]
 $MASTER-0
 
+# host group for etcd
+[etcd]
+$MASTER-0 
+
 # host group for nodes
 [nodes]
 $MASTER-0 openshift_node_labels="{'type': 'master', 'zone': 'default'}" openshift_hostname=$MASTER-0
