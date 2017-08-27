@@ -34,9 +34,9 @@ NODELOOP=$((NODECOUNT - 1))
 # Create vhds Container in PV Storage Account
 echo $(date) " - Creating vhds container in PV Storage Account"
 
-az login --service-principal -u $AADCLIENTID -p $AADCLIENTSECRET --tenant $TENANTID
+/root/bin/az login --service-principal -u $AADCLIENTID -p $AADCLIENTSECRET --tenant $TENANTID
 
-az storage container create --account-name $STORAGEACCOUNT1 --account-key $SAKEY1 --name vhds
+/root/bin/az storage container create --account-name $STORAGEACCOUNT1 --account-key $SAKEY1 --name vhds
 
 # Generate private keys for use by Ansible
 echo $(date) " - Generating Private keys for use by Ansible for OpenShift Installation"
