@@ -70,11 +70,17 @@ EOF
 
 # Install Azure CLI
 
-echo $(date) " - Installing Azure CLI"
+echo $(date) " - Installing Azure CLI 2.0"
 
-yum -y --enablerepo=epel install nodejs
+yum check-update; sudo yum install -y gcc python libffi-devel python-devel openssl-devel
+curl -L https://aka.ms/InstallAzureCli -o cli-install.sh
+chmod +x ./cli-install.sh
+sed -i -e "s/^_TTY/#&/;s/< $_TTY/#&/" ./cli-install.sh
+./cli-install.sh <<< "
 
-npm install -g azure-cli
+
+
+"
 
 fi
 

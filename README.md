@@ -131,9 +131,14 @@ You will get an output similar to:
 }
 ```
 
-The appId is used for the aadClientId parameter.
+The appId is used for the aadClientId parameter and password is used for the aadClientSecret.
 
-To assign permissions, please follow the instructions from Azure CLI 1.0 Step 2 above.
+To assign permissions to a resouce group, please follow the instructions from Azure CLI 1.0 Step 2 above to do OR use the following command line:
+
+3. **Assign permisions to Service Principal for the specific Resource Group**<br/>
+  a.  az role assignment create --assignee \<appId from prior step\> --resource-group \<Resource group name\> --role contributor<br/>
+      Ex: `az role assignment create --assignee 2c8c6a58-44ac-452e-95d8-a790f6ade583 --resource-group 00000test --role contributor`<br/>
+
 
 ### azuredeploy.Parameters.json File Explained
 
